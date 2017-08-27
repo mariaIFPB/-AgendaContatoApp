@@ -23,17 +23,3 @@ class Agenda(Contato):
             pass
     except:
         print("erro na classe agenda")
-"""
-json_data = json.loads(data)
->>> type(json_data)
-<type 'dict'>
->>> print json_data.keys()
-[u'telefones', u'ultimoNome', u'idade', u'primeiroNome', u'endereco', u'emails']
-
->>> arquivo = open('musica.txt', 'r')
->>> texto = arquivo.readlines()
->>> texto.append('Nova linha') 
->>> arquivo = open('musica.txt', 'w')
->>> arquivo.writelines(texto)
->>> arquivo.close()
-"""
