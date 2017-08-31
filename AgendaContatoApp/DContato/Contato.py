@@ -1,14 +1,27 @@
-from Pessoa import Pessoa
-from Telefone import Telefone
+from DPessoa.Pessoa import Pessoa
+from DTelefone.Telefone import Telefone
+from datetime import date
 import json
-class Contato(Pessoa, Telefone):
-    def __init__(self, criacao, listContato):
-        super(Contato, self).__init__(nome, nascimento, email)
-        super(Contato, self).__init__(numero, DDD, codPais)
-        self.criacao = criacao
-        self.listContato = listContato
-        listContato = {nome : [ nascimento, email, numero, DDD, codPais ]}
 
+class Contato():
+    try:
+        def __init__(self, pessoa):
+            global criacao
+            self.criacao = date.today()
+            self.pessoa = pessoa
+            self.pessoa = Pessoa(self.nome, self.nascimento, self.email)
 
-    def ListarTelefones(self):
-        pass
+            self.tel = Telefone( self.numero, self.DDD, self.codPais)
+
+        def __str__(self):
+            return ("data de criacao: " + criacao)
+
+        def ListarTelefones(self):
+            t = open("telefones.json" "w")
+            t.write(self.tel)
+            t = open("telefones.json", "r")
+            return (t.readlines())
+            t.close()
+
+    except:
+        print("erro na classe contato.")
