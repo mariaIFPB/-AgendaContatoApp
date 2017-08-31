@@ -1,25 +1,48 @@
+from DContato.Contato import Contato
+from DPessoa.Pessoa import Pessoa
+from DTelefone.Telefone import Telefone
 import json
-from Contato import Contato
 
-class Agenda(Contato):
+class Agenda:
     try:
-        arquivoJson = open("listaContatos.json", "w")
-        dadosJson = json.load(arquivoJson)
 
         def __init__(self, proprietario):
             self.proprietario = proprietario
+            self.ctt = []
+            self.tel = Telefone( self.numero, self.DDD, self.codPais)
+            global ctt
 
         def ContarContatos(self):
-            contar = len(dadosJson)
+            contar = len(self.ctt)
             print(contar)
 
         def ListarContatos(self):
-            dadosJson.readlines()
+            for i in len(ctt):
+                print(i)
 
-        def IncluirContato(self, Contato):
-            contatos[contato] = [pessoa, telefone]
+        def IncluirContato(self):
 
-        def ExcluirContato(self, nome):
-            pass
+            t = open("telefones.json", "w")
+            json.dump(tel, t)
+            ctt = [{self.nome: {self.nascimento, self.email, self.tel}}]
+            arquivoJson = open("listaContatos.json", "w")
+            arquivoJson.write(ctt)
+            json.dump(self.ctt, arquivoJson)
+            arquivoJson.close()
+            t.close()
+
+        def ExcluirContato(self, remover):
+            remover = remover.lower()
+            for i in enumerate(ctt):
+                if remover == ctt[i]:
+                    del(remover)
+
+        def BuscarContatos(nome):
+            nome = nome.lower()
+            for i in enumerate(ctt):
+                if nome == ctt[i]:
+                    return i
+            return("contato não encontrado")
+
     except:
         print("erro na classe agenda")
