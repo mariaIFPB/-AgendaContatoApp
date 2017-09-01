@@ -14,7 +14,7 @@ class Agenda:
 
         def ContarContatos(self):
             contar = len(self.ctt)
-            print(contar)
+            return(contar)
 
         def ListarContatos(self):
             for i in len(ctt):
@@ -45,4 +45,4 @@ class Agenda:
             return("contato não encontrado")
 
     except:
-        print("erro na classe agenda")
+        print("ocorreu um erro.")
