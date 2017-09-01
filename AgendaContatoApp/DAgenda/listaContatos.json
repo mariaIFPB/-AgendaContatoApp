@@ -12,8 +12,3 @@
 
 }
 
-json_data = json.loads(data)
->>> type(json_data)
-<type 'dict'>
->>> print json_data.keys()
-[u'telefones', u'ultimoNome', u'idade', u'primeiroNome', u'endereco', u'emails']
