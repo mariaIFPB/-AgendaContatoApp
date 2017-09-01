@@ -5,15 +5,25 @@ from DTelefone.Telefone import Telefone
 def main():
     try:
         Rodando = 1
+        proprietario = input("informe o nome do proprietario: ")
         def menu():
     
-            proprietario = input("informe o nome do proprietario: ")
-    
-            print("Seja Bem Vindo! \nopções: \n 1. Incluir um novo contato;\n 2. Listar todos os contatos;\n 3. Remover contato;\n 4. Buscar contato;\n 5. Informar a quantidade de contatos \n 6. sair")
+            print("Seja Bem Vindo! \n opções: \n 1. Incluir um novo contato; \n 2. Listar todos os contatos;\n 3. Remover contato;\n 4. Buscar contato;\n 5. Informar a quantidade de contatos; \n 6. sair.")
             global opcao
             opcao = int(input("informe o numero da opção que você deseja executar:"))
             a = Agenda(proprietario)
-    
+
+            try:
+
+                if (type(opcao) == str):
+                    print("informe um inteiro, por favor.")
+
+                if ((opcao != 1) and (opcao != 2) and (opcao != 3) and (opcao != 4) and (opcao != 5) and (opcao != 6) ):
+                    print("opção invalida.")
+
+            except:
+                print("valores informados inválidos")
+
             if (opcao == 1):
                 nome = input("informe o nome: ")
                 nascimento = input("informe a data de nascimento: ")
@@ -45,9 +55,9 @@ def main():
         while (Rodando):
             menu()
             if (opcao == 6):
-                break
+                Rodando = 0
     except:
-        print("o programa está com algum erro no main().")
+        print("o programa está com um pequeno erro, contate o programador, por favor.")
 
 if __name__ == "__main__":
     main()
